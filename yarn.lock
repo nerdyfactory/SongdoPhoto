@@ -5109,6 +5109,10 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
+"react-native-maps@https://github.com/JonghunYu/react-native-maps.git#master":
+  version "0.25.0"
+  resolved "https://github.com/JonghunYu/react-native-maps.git#090a2e07c1f20a97b7aafc258c2defe0144f3ecb"
+
 react-native@0.60.3:
   version "0.60.3"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.60.3.tgz#da010bc5b63201166562ddeff1cd3e07da34d1de"
