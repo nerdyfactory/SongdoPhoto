@@ -10,6 +10,7 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.3",
+    "react-native-image-picker": "^1.0.1",
     "react-native-maps": "https://github.com/JonghunYu/react-native-maps.git#master"
   },
   "devDependencies": {

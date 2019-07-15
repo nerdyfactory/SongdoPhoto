@@ -35,6 +35,8 @@ target 'SongdoPhoto' do
   pod 'Google-Maps-iOS-Utils'
 
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
   target 'SongdoPhotoTests' do
     inherit! :search_paths
     # Pods for testing
