@@ -1,25 +1,92 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
  * @format
  * @flow
  */
 
 import React, { Fragment, PureComponent } from 'react';
 import { StyleSheet, View } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import ImagePicker from 'react-native-image-picker';
+import Geolocation from '@react-native-community/geolocation';
+
 import ActionButton from './components/ActionButton';
 const AddIcon = require('./assets/images/002-add.png');
+type State = {
+  latitude: number,
+  longitude: number,
+  latitudeDelta: number,
+  longitudeDelta: number,
+};
 
-export default class App extends PureComponent {
+export default class App extends PureComponent<{}, State> {
+  state = {
+    latitude: 37.5610336,
+    longitude: 126.9795475,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  };
+
+  componentDidMount() {
+    Geolocation.getCurrentPosition(({ coords }) => {
+      const { longitude, latitude } = coords;
+      this.setState({ longitude, latitude });
+    });
+  }
+
   onPressAdd = () => {
+    const options = {
+      title: 'Select a picture',
+      noData: true,
+      storageOptions: {
+        skipBackup: true,
+        path: 'songdophoto',
+        cameraRoll: true,
+      },
+    };
+
+    ImagePicker.showImagePicker(options, response => {
+      console.log('Response = ', response);
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else {
+      }
+    });
+  };
+
+  onRegionChange = ({
+    longitude,
+    latitude,
+  }: {
+    longitude: number,
+    latitude: number,
+  }) => {
+    console.log(longitude, latitude);
   };
 
   render() {
+    const { longitude, latitude, longitudeDelta, latitudeDelta } = this.state;
+    console.log(longitude + ',' + latitude);
     return (
       <Fragment>
-        <MapView provider={PROVIDER_GOOGLE} style={styles.container} />
+        <MapView
+          provider={PROVIDER_GOOGLE}
+          style={styles.container}
+          region={{
+            longitude,
+            latitude,
+            longitudeDelta,
+            latitudeDelta,
+          }}
+          onRegionChange={this.onRegionChange}
+        />
+        <Marker
+          coordinate={{ latitude, longitude }}
+          title={'11111111111'}
+          description={'aaaaaaaaaa'}
+          image={AddIcon}
+        />
         <View style={styles.bottom}>
           <ActionButton
             containerStyle={styles.buttonContainer}

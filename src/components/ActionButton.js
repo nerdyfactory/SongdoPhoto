@@ -1,16 +1,31 @@
+/**
+ * @format
+ * @flow
+ */
+
 import React from 'react';
-import { TouchableHighlight, Image } from 'react-native';
+import { TouchableOpacity, Image } from 'react-native';
+import type { PressEvent } from 'react-native/Libraries/Types/CoreEventTypes';
+import type {
+  ViewStyleProp,
+  ImageStyleProp,
+} from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 const ActionButton = ({
   containerStyle = {},
   iconStyle = {},
   onPress = () => {},
   source,
+}: {
+  containerStyle?: ViewStyleProp,
+  iconStyle?: ImageStyleProp,
+  onPress: (event: PressEvent) => void,
+  source: number,
 }) => {
   return (
-    <TouchableHighlight style={containerStyle} onPress={onPress}>
+    <TouchableOpacity style={containerStyle} onPress={onPress}>
       <Image style={iconStyle} source={source} />
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 
