@@ -1,6 +1,5 @@
 /**
  * @format
- * @flow
  */
 
 import React, { Fragment, PureComponent } from 'react';
@@ -11,29 +10,30 @@ import Geolocation from '@react-native-community/geolocation';
 
 import ActionButton from './components/ActionButton';
 const AddIcon = require('./assets/images/002-add.png');
-type State = {
-  latitude: number,
-  longitude: number,
-  latitudeDelta: number,
-  longitudeDelta: number,
-};
+
+interface State {
+  latitude: number;
+  longitude: number;
+  latitudeDelta: number;
+  longitudeDelta: number;
+}
 
 export default class App extends PureComponent<{}, State> {
-  state = {
+  public state = {
     latitude: 37.5610336,
     longitude: 126.9795475,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   };
 
-  componentDidMount() {
+  public componentDidMount() {
     Geolocation.getCurrentPosition(({ coords }) => {
       const { longitude, latitude } = coords;
       this.setState({ longitude, latitude });
     });
   }
 
-  onPressAdd = () => {
+  private onPressAdd = () => {
     const options = {
       title: 'Select a picture',
       noData: true,
@@ -50,22 +50,21 @@ export default class App extends PureComponent<{}, State> {
         console.log('User cancelled image picker');
       } else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
-      } else {
       }
     });
   };
 
-  onRegionChange = ({
+  private onRegionChange = ({
     longitude,
     latitude,
   }: {
-    longitude: number,
-    latitude: number,
+    longitude: number;
+    latitude: number;
   }) => {
     console.log(longitude, latitude);
   };
 
-  render() {
+  public render() {
     const { longitude, latitude, longitudeDelta, latitudeDelta } = this.state;
     console.log(longitude + ',' + latitude);
     return (

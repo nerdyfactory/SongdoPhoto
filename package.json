@@ -10,22 +10,28 @@
   "dependencies": {
     "@react-native-community/geolocation": "^1.4.2",
     "react": "16.8.6",
-    "react-native": "0.60.4",
-    "react-native-image-picker": "^1.0.1",
-    "react-native-maps": "https://github.com/JonghunYu/react-native-maps.git#master",
+    "react-native": "0.60.5",
+    "react-native-firebase": "~5.5.6",
+    "react-native-image-picker": "^1.0.2",
+    "react-native-maps": "^0.25.0",
     "react-navigation": "^3.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@babel/preset-flow": "^7.0.0",
-    "@babel/runtime": "^7.5.4",
-    "@react-native-community/eslint-config": "^0.0.5",
+    "@babel/runtime": "^7.5.5",
+    "@types/jest": "^24.0.17",
+    "@types/react": "^16.9.1",
+    "@types/react-native": "^0.60.4",
+    "@types/react-test-renderer": "^16.9.0",
     "babel-jest": "^24.8.0",
-    "eslint": "^6.0.1",
-    "flow-bin": "^0.105.1",
     "jest": "^24.8.0",
-    "metro-react-native-babel-preset": "^0.55.0",
-    "react-test-renderer": "16.8.6"
+    "metro-react-native-babel-preset": "^0.56.0",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "16.8.6",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.3"
   },
   "jest": {
     "preset": "react-native"
