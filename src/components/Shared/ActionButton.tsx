@@ -13,9 +13,9 @@ import {
 } from 'react-native';
 
 export interface Props {
-  containerStyle: StyleProp<ViewStyle>;
-  iconStyle: StyleProp<ImageStyle>;
-  onPress: (event: GestureResponderEvent) => void;
+  containerStyle?: StyleProp<ViewStyle>;
+  iconStyle?: StyleProp<ImageStyle>;
+  onPress?: (event: GestureResponderEvent) => void;
   source: number;
 }
 
