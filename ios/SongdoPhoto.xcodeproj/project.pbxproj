@@ -5,27 +5,29 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SongdoPhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SongdoPhotoTests.m */; };
 		00E472BB271A7C3660D0D656 /* libPods-SongdoPhoto-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AF3148505321BC8B426465 /* libPods-SongdoPhoto-tvOSTests.a */; };
+		100ADBB214DF4C3297D50281 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C614F01053474D94750D27 /* OpenSans-SemiBold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		178801B0479538C893CB8155 /* libPods-SongdoPhoto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA1119A2DD0CFC2B09F1322 /* libPods-SongdoPhoto.a */; };
+		251DC6BC2317BF7600A58DB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 251DC6BB2317BF7600A58DB1 /* GoogleService-Info.plist */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* SongdoPhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SongdoPhotoTests.m */; };
+		4EE67CB3F2F74CFE89B7B1B7 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7AB0D852BAA4DADB92F5D7D /* NunitoSans-Bold.ttf */; };
 		610E307886651762C6B0271D /* libPods-SongdoPhoto-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E00E13999AB7885B92BA6E9 /* libPods-SongdoPhoto-tvOS.a */; };
 		66C2D1F08EE746EA69F80AAF /* libPods-SongdoPhotoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 333F7E032E7085317275328D /* libPods-SongdoPhotoTests.a */; };
-		4EE67CB3F2F74CFE89B7B1B7 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7AB0D852BAA4DADB92F5D7D /* NunitoSans-Bold.ttf */; };
-		A9A926BC7C8740F0894186B9 /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF34E1AB7C7C4B099CB4044F /* NunitoSans-Light.ttf */; };
-		C12EDE91E265494F8FB90D55 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB8A94140B664D55A7D8B790 /* NunitoSans-Regular.ttf */; };
-		9579EE23CD4A434FA8D5AE3A /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 143C2EF7F27144DEB04978A4 /* NunitoSans-SemiBold.ttf */; };
 		68AE9FF45CB54ADB8AFEA669 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6AF5B5EA276454E869D65FC /* OpenSans-Bold.ttf */; };
+		9579EE23CD4A434FA8D5AE3A /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 143C2EF7F27144DEB04978A4 /* NunitoSans-SemiBold.ttf */; };
+		A9A926BC7C8740F0894186B9 /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF34E1AB7C7C4B099CB4044F /* NunitoSans-Light.ttf */; };
 		B69E0DBCFF9A49FF801FDD47 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15D5C00EF6A041589097356B /* OpenSans-Light.ttf */; };
-		100ADBB214DF4C3297D50281 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C614F01053474D94750D27 /* OpenSans-SemiBold.ttf */; };
+		C12EDE91E265494F8FB90D55 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB8A94140B664D55A7D8B790 /* NunitoSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +60,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SongdoPhoto/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SongdoPhoto/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SongdoPhoto/main.m; sourceTree = "<group>"; };
+		143C2EF7F27144DEB04978A4 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NunitoSans-SemiBold.ttf"; path = "../src/assets/fonts/NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		15D5C00EF6A041589097356B /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../src/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		1ADAF4A75F5CAFAC4BF1BA1C /* Pods-SongdoPhoto-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongdoPhoto-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SongdoPhoto-tvOS/Pods-SongdoPhoto-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		251DC6BB2317BF7600A58DB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* SongdoPhoto-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SongdoPhoto-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* SongdoPhoto-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SongdoPhoto-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		333F7E032E7085317275328D /* libPods-SongdoPhotoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SongdoPhotoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,20 +71,18 @@
 		36D96713B63ED6FF177BE1BC /* Pods-SongdoPhoto-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongdoPhoto-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SongdoPhoto-tvOSTests/Pods-SongdoPhoto-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B8573036E2A7397B84C4700 /* Pods-SongdoPhoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongdoPhoto.release.xcconfig"; path = "Target Support Files/Pods-SongdoPhoto/Pods-SongdoPhoto.release.xcconfig"; sourceTree = "<group>"; };
 		4BAE38BD1974F483C3296F07 /* Pods-SongdoPhotoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongdoPhotoTests.release.xcconfig"; path = "Target Support Files/Pods-SongdoPhotoTests/Pods-SongdoPhotoTests.release.xcconfig"; sourceTree = "<group>"; };
+		52C614F01053474D94750D27 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		AACBD4631C38F60273E8CE33 /* Pods-SongdoPhoto-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongdoPhoto-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SongdoPhoto-tvOS/Pods-SongdoPhoto-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		AF34E1AB7C7C4B099CB4044F /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NunitoSans-Light.ttf"; path = "../src/assets/fonts/NunitoSans-Light.ttf"; sourceTree = "<group>"; };
+		B7AB0D852BAA4DADB92F5D7D /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NunitoSans-Bold.ttf"; path = "../src/assets/fonts/NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 		B8AF3148505321BC8B426465 /* libPods-SongdoPhoto-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SongdoPhoto-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA47BCC860BD925445095D6 /* Pods-SongdoPhoto-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongdoPhoto-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SongdoPhoto-tvOSTests/Pods-SongdoPhoto-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C6AF5B5EA276454E869D65FC /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		CDA1119A2DD0CFC2B09F1322 /* libPods-SongdoPhoto.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SongdoPhoto.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3655C4C05731EA9355A59B5 /* Pods-SongdoPhotoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongdoPhotoTests.debug.xcconfig"; path = "Target Support Files/Pods-SongdoPhotoTests/Pods-SongdoPhotoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB8A94140B664D55A7D8B790 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NunitoSans-Regular.ttf"; path = "../src/assets/fonts/NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		B7AB0D852BAA4DADB92F5D7D /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; name = "NunitoSans-Bold.ttf"; path = "../src/assets/fonts/NunitoSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AF34E1AB7C7C4B099CB4044F /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; name = "NunitoSans-Light.ttf"; path = "../src/assets/fonts/NunitoSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DB8A94140B664D55A7D8B790 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; name = "NunitoSans-Regular.ttf"; path = "../src/assets/fonts/NunitoSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		143C2EF7F27144DEB04978A4 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "NunitoSans-SemiBold.ttf"; path = "../src/assets/fonts/NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C6AF5B5EA276454E869D65FC /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		15D5C00EF6A041589097356B /* OpenSans-Light.ttf */ = {isa = PBXFileReference; name = "OpenSans-Light.ttf"; path = "../src/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		52C614F01053474D94750D27 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,7 @@
 		13B07FAE1A68108700A75B9A /* SongdoPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				251DC6BB2317BF7600A58DB1 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -196,6 +200,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9D2DC407BEB9478BB0B94D7A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7AB0D852BAA4DADB92F5D7D /* NunitoSans-Bold.ttf */,
+				AF34E1AB7C7C4B099CB4044F /* NunitoSans-Light.ttf */,
+				DB8A94140B664D55A7D8B790 /* NunitoSans-Regular.ttf */,
+				143C2EF7F27144DEB04978A4 /* NunitoSans-SemiBold.ttf */,
+				C6AF5B5EA276454E869D65FC /* OpenSans-Bold.ttf */,
+				15D5C00EF6A041589097356B /* OpenSans-Light.ttf */,
+				52C614F01053474D94750D27 /* OpenSans-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		D372EF0EBE2DA76189E593B1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,21 +228,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		9D2DC407BEB9478BB0B94D7A /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				B7AB0D852BAA4DADB92F5D7D /* NunitoSans-Bold.ttf */,
-				AF34E1AB7C7C4B099CB4044F /* NunitoSans-Light.ttf */,
-				DB8A94140B664D55A7D8B790 /* NunitoSans-Regular.ttf */,
-				143C2EF7F27144DEB04978A4 /* NunitoSans-SemiBold.ttf */,
-				C6AF5B5EA276454E869D65FC /* OpenSans-Bold.ttf */,
-				15D5C00EF6A041589097356B /* OpenSans-Light.ttf */,
-				52C614F01053474D94750D27 /* OpenSans-SemiBold.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -377,6 +380,7 @@
 				C12EDE91E265494F8FB90D55 /* NunitoSans-Regular.ttf in Resources */,
 				9579EE23CD4A434FA8D5AE3A /* NunitoSans-SemiBold.ttf in Resources */,
 				68AE9FF45CB54ADB8AFEA669 /* OpenSans-Bold.ttf in Resources */,
+				251DC6BC2317BF7600A58DB1 /* GoogleService-Info.plist in Resources */,
 				B69E0DBCFF9A49FF801FDD47 /* OpenSans-Light.ttf in Resources */,
 				100ADBB214DF4C3297D50281 /* OpenSans-SemiBold.ttf in Resources */,
 			);

@@ -1,21 +1,18 @@
 /**
  * @format
  */
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-import {
-  ActivityIndicator,
-  AsyncStorage,
-  StatusBar,
-  StyleSheet,
-  View,
-} from 'react-native';
+import { ActivityIndicator, StatusBar, StyleSheet, View } from 'react-native';
+
+import AsyncStorage from '@react-native-community/async-storage';
 
 import {
   NavigationScreenProp,
   NavigationState,
   NavigationParams,
 } from 'react-navigation';
+import firebase from 'react-native-firebase';
 
 export interface Props {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -23,11 +20,10 @@ export interface Props {
 
 export default function AuthLoadingScreen({ navigation }: Props) {
   useEffect(() => {
-    AsyncStorage.getItem('userToken').then(userToken => {
-      navigation.navigate(userToken ? 'App' : 'Auth');
-    });
+    const { currentUser } = firebase.auth();
+    console.log(currentUser);
+    navigation.navigate(currentUser ? 'App' : 'Auth');
   });
-
   return (
     <View>
       <ActivityIndicator />

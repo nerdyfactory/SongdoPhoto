@@ -14,7 +14,7 @@ const AuthStack = createStackNavigator({
   ForgotPassword: ForgotPasswordScreen,
 });
 
-export default createAppContainer(createSwitchNavigator(
+const Navigator = createAppContainer(createSwitchNavigator(
   {
     AuthLoading: AuthLoadingScreen,
     App: AppStack,
@@ -24,3 +24,5 @@ export default createAppContainer(createSwitchNavigator(
     initialRouteName: 'AuthLoading',
   }
 ));
+
+export default Navigator

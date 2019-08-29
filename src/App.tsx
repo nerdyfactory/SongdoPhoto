@@ -6,12 +6,18 @@ import React, { Fragment, PureComponent } from 'react';
 import { View, StyleSheet, Linking, AppState } from 'react-native';
 import Navigator from './Navigator';
 import ToastMessage from './components/Shared/ToastMessage';
+import { AuthProvider } from './contexts/AuthContext';
+import { MessageProvider } from './contexts/MessageContext';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Navigator />
-      <ToastMessage />
+      <MessageProvider>
+        <AuthProvider>
+          <Navigator />
+        </AuthProvider>
+        <ToastMessage />
+      </MessageProvider>
     </View>
   );
 }
@@ -19,6 +25,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgb(212, 236, 246)',
   },
 });

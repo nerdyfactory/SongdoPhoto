@@ -1,22 +1,45 @@
-import React, {createContext, useState, useMemo} from 'react'
+/**
+ * @format
+ */
+import React, {
+  createContext,
+  useState,
+  useMemo,
+  useEffect,
+  useContext,
+  ReactNode,
+  Dispatch,
+} from 'react';
+import firebase, { RNFirebase } from 'react-native-firebase';
 
-const AuthContext = createContext(undefined)
+type AuthContextValue = [RNFirebase.User, Dispatch<any>];
 
-function useAuth() {
-  const context = React.useContext(AuthContext)
-  if (!context) {
-    throw new Error(`useSome must be used within a AuthProvider`)
+const AuthContext = createContext<AuthContextValue | undefined>(undefined);
+
+function useAuth(): AuthContextValue {
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error(`useAuth must be used within a AuthProvider`);
   }
-  return context
+  return context;
 }
 
-function AuthProvider(props: any) {
-  const [auth, setAuth] = useState({
-    token: '',
-    name: ''
-  })
-  const value = useMemo(() => [auth, setAuth], [auth])
-  return <AuthContext.Provider value={value} {...props} />
+interface Props {
+  children: ReactNode;
 }
 
-export {AuthProvider, useAuth}
+function AuthProvider({ children }: Props) {
+  const [auth, setAuth] = useState();
+
+  useEffect(() => {
+    return firebase.auth().onAuthStateChanged(user => {
+      setAuth(user || {});
+    });
+  });
+
+  const value = useMemo<AuthContextValue>(() => [auth, setAuth], [auth]);
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+}
+
+export { AuthProvider, useAuth };

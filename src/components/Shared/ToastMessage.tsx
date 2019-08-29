@@ -6,14 +6,11 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Keyboard, Animated } from 'react-native';
 import Colors from '../../theme/Colors';
 import Fonts from '../../theme/Fonts';
+import { useMessage } from '../../contexts/MessageContext';
 
-export interface Props {
-  messageText?: string;
-  messageType?: string;
-}
-
-export default function ToastMessage({ messageType, messageText }: Props) {
+export default function ToastMessage() {
   const [fadeAnim, setFadeAnim] = useState(new Animated.Value(-100));
+
   useEffect(() => {
     Keyboard.dismiss();
     Animated.sequence([
@@ -28,6 +25,12 @@ export default function ToastMessage({ messageType, messageText }: Props) {
       }),
     ]).start();
   });
+
+  const [message] = useMessage();
+  if (!message) {
+    return null;
+  }
+  const { messageType, messageText } = message;
 
   const containerStyles = [
     styles.container,

@@ -11,6 +11,7 @@ import {
   ImageStyle,
   GestureResponderEvent,
 } from 'react-native';
+import BasicButton from './BasicButton';
 
 export interface Props {
   containerStyle?: StyleProp<ViewStyle>;
@@ -26,9 +27,9 @@ const ActionButton = ({
   source,
 }: Props) => {
   return (
-    <TouchableOpacity style={containerStyle} onPress={onPress}>
+    <BasicButton style={containerStyle} onPress={onPress}>
       <Image style={iconStyle} source={source} />
-    </TouchableOpacity>
+    </BasicButton>
   );
 };
 
