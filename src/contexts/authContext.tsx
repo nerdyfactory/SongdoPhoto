@@ -35,7 +35,7 @@ function AuthProvider({ children }: Props) {
     return firebase.auth().onAuthStateChanged(user => {
       setAuth(user || {});
     });
-  });
+  }, []);
 
   const value = useMemo<AuthContextValue>(() => [auth, setAuth], [auth]);
 
