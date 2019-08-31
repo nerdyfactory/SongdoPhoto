@@ -67,6 +67,7 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 0.3)
+  - GoogleIDFASupport (3.14.0)
   - GoogleMaps (3.1.0):
     - GoogleMaps/Maps (= 3.1.0)
   - GoogleMaps/Base (3.1.0)
@@ -198,6 +199,7 @@ DEPENDENCIES:
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - Google-Maps-iOS-Utils
+  - GoogleIDFASupport (~> 3.14.0)
   - GoogleMaps
   - React (from `../node_modules/react-native/`)
   - React-Core (from `../node_modules/react-native/React`)
@@ -239,6 +241,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - Google-Maps-iOS-Utils
     - GoogleAppMeasurement
+    - GoogleIDFASupport
     - GoogleMaps
     - GoogleUtilities
     - GTMSessionFetcher
@@ -319,6 +322,7 @@ SPEC CHECKSUMS:
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
   GoogleAppMeasurement: a35a645835bae31b6bdc0576396bc23908f12a22
+  GoogleIDFASupport: aaf8c10bd429abb1c15349d5252244f5eda8ead1
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GoogleUtilities: e7dc37039b19df7fe543479d3e4a02ac8d11bb69
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
@@ -350,6 +354,6 @@ SPEC CHECKSUMS:
   RNReanimated: 1b52415c4302f198cb581282a0166690bad62c43
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: 21467f7d1dcdd470977d8d71ac24a8306e853315
+PODFILE CHECKSUM: dee1b00b746136512714634eae0a109f74f1189b
 
 COCOAPODS: 1.7.2
