@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [GMSServices provideAPIKey:@"AIzaSyDRyYQUpp260c0ODdyg7ZHjBTq5aZhUbZQ"];
+  [GMSServices provideAPIKey:@"AIzaSyDl6QgR590CpDy9E9COQMVamWlW1XMvMDo"];
   [FIRApp configure];
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];

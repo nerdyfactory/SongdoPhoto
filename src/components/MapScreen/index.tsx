@@ -78,14 +78,9 @@ export default class MapScreen extends PureComponent<{}, State> {
             longitudeDelta,
             latitudeDelta,
           }}
-          onRegionChange={this.onRegionChange}
-        />
-        <Marker
-          coordinate={{ latitude, longitude }}
-          title={'11111111111'}
-          description={'aaaaaaaaaa'}
-          image={AddIcon}
-        />
+          onRegionChange={this.onRegionChange}>
+          <Marker coordinate={{ latitude, longitude }} image={AddIcon} />
+        </MapView>
         <View style={styles.bottom}>
           <ActionButton
             containerStyle={styles.buttonContainer}

@@ -21,7 +21,6 @@ export interface Props {
 export default function AuthLoadingScreen({ navigation }: Props) {
   useEffect(() => {
     const { currentUser } = firebase.auth();
-    console.log(currentUser);
     navigation.navigate(currentUser ? 'App' : 'Auth');
   });
   return (
