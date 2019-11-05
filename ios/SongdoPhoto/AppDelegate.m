@@ -6,7 +6,6 @@
  */
 
 #import "AppDelegate.h"
-
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -18,7 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  [GMSServices provideAPIKey:@"AIzaSyDl6QgR590CpDy9E9COQMVamWlW1XMvMDo"];
+  NSBundle *main = [NSBundle mainBundle];
+
+  [GMSServices provideAPIKey:main.infoDictionary[@"GoogleApiKey"]];
+  
   [FIRApp configure];
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
