@@ -34,6 +34,7 @@ target 'SongdoPhoto' do
   pod 'Firebase/Core', '~> 6.3.0'
   pod 'Firebase/Auth', '~> 6.3.0'
   pod 'GoogleIDFASupport', '~> 3.14.0'
+  pod 'react-native-geolocation', path: '../node_modules/@react-native-community/geolocation'
 
   target 'SongdoPhotoTests' do
     inherit! :search_paths
