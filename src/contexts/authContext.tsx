@@ -10,9 +10,9 @@ import React, {
   ReactNode,
   Dispatch,
 } from 'react';
-import firebase, { RNFirebase } from 'react-native-firebase';
+import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 
-type AuthContextValue = [RNFirebase.User, Dispatch<any>];
+type AuthContextValue = [FirebaseAuthTypes.User, Dispatch<any>];
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
@@ -29,15 +29,17 @@ interface Props {
 }
 
 function AuthProvider({ children }: Props) {
-  const [auth, setAuth] = useState();
+  const [currentUser, setUser] = useState();
 
   useEffect(() => {
-    return firebase.auth().onAuthStateChanged(user => {
-      setAuth(user || {});
+    return auth().onAuthStateChanged((user: FirebaseAuthTypes.User | null) => {
+      setUser(user || {});
     });
   }, []);
 
-  const value = useMemo<AuthContextValue>(() => [auth, setAuth], [auth]);
+  const value = useMemo<AuthContextValue>(() => [currentUser, setUser], [
+    currentUser,
+  ]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

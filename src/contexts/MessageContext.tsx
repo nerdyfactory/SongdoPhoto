@@ -10,7 +10,6 @@ import React, {
   ReactNode,
   Dispatch,
 } from 'react';
-import firebase, { RNFirebase } from 'react-native-firebase';
 
 interface Message {
   messageType?: 'error' | 'warning' | 'error';

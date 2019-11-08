@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 import { StyleSheet, View, SafeAreaView, Text, TextInput } from 'react-native';
-import firebase from 'react-native-firebase';
+import auth from '@react-native-firebase/auth';
 import {
   NavigationParams,
   NavigationScreenProp,
@@ -24,8 +24,7 @@ export default function SignUpScreen({ navigation }: Props) {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useMessage();
   const onSubmit = () => {
-    return firebase
-      .auth()
+    return auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         setMessage({

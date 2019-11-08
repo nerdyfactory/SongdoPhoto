@@ -12,7 +12,7 @@ import {
   NavigationState,
   NavigationParams,
 } from 'react-navigation';
-import firebase from 'react-native-firebase';
+import auth from '@react-native-firebase/auth';
 
 export interface Props {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -20,8 +20,7 @@ export interface Props {
 
 export default function AuthLoadingScreen({ navigation }: Props) {
   useEffect(() => {
-    const { currentUser } = firebase.auth();
-    navigation.navigate(currentUser ? 'App' : 'Auth');
+    navigation.navigate(auth().currentUser ? 'App' : 'Auth');
   });
   return (
     <View>
