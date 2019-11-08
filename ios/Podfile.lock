@@ -1,40 +1,6 @@
 PODS:
   - boost-for-react-native (1.63.0)
-  - Crashlytics (3.13.4):
-    - Fabric (~> 1.10.2)
   - DoubleConversion (1.1.6)
-  - Fabric (1.10.2)
-  - Firebase/Auth (6.3.0):
-    - Firebase/CoreOnly
-    - FirebaseAuth (~> 6.1.2)
-  - Firebase/Core (6.3.0):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.0.2)
-  - Firebase/CoreOnly (6.3.0):
-    - FirebaseCore (= 6.0.3)
-  - FirebaseAnalytics (6.0.2):
-    - FirebaseCore (~> 6.0)
-    - FirebaseInstanceID (~> 4.2)
-    - GoogleAppMeasurement (= 6.0.2)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (~> 0.3)
-  - FirebaseAuth (6.1.2):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 6.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.2)
-    - GoogleUtilities/Environment (~> 6.2)
-    - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseAuthInterop (1.0.0)
-  - FirebaseCore (6.0.3):
-    - GoogleUtilities/Environment (~> 6.0)
-    - GoogleUtilities/Logger (~> 6.0)
-  - FirebaseInstanceID (4.2.3):
-    - FirebaseCore (~> 6.0)
-    - GoogleUtilities/Environment (~> 6.0)
-    - GoogleUtilities/UserDefaults (~> 6.0)
   - Folly (2018.10.22.00):
     - boost-for-react-native
     - DoubleConversion
@@ -61,42 +27,11 @@ PODS:
     - GoogleMaps
   - Google-Maps-iOS-Utils/QuadTree (2.1.0):
     - GoogleMaps
-  - GoogleAppMeasurement (6.0.2):
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
-    - GoogleUtilities/MethodSwizzler (~> 6.0)
-    - GoogleUtilities/Network (~> 6.0)
-    - "GoogleUtilities/NSData+zlib (~> 6.0)"
-    - nanopb (~> 0.3)
-  - GoogleIDFASupport (3.14.0)
-  - GoogleMaps (3.1.0):
-    - GoogleMaps/Maps (= 3.1.0)
-  - GoogleMaps/Base (3.1.0)
-  - GoogleMaps/Maps (3.1.0):
+  - GoogleMaps (3.2.0):
+    - GoogleMaps/Maps (= 3.2.0)
+  - GoogleMaps/Base (3.2.0)
+  - GoogleMaps/Maps (3.2.0):
     - GoogleMaps/Base
-  - GoogleUtilities/AppDelegateSwizzler (6.2.5):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.2.5)
-  - GoogleUtilities/Logger (6.2.5):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.2.5):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.2.5):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.2.5)"
-  - GoogleUtilities/Reachability (6.2.5):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.2.5):
-    - GoogleUtilities/Logger
-  - GTMSessionFetcher/Core (1.2.2)
-  - nanopb (0.3.901):
-    - nanopb/decode (= 0.3.901)
-    - nanopb/encode (= 0.3.901)
-  - nanopb/decode (0.3.901)
-  - nanopb/encode (0.3.901)
   - React (0.60.5):
     - React-Core (= 0.60.5)
     - React-DevSupport (= 0.60.5)
@@ -144,13 +79,13 @@ PODS:
   - React-jsinspector (0.60.5)
   - react-native-geolocation (1.4.2):
     - React
-  - react-native-google-maps (0.25.0):
+  - react-native-google-maps (0.26.1):
     - Google-Maps-iOS-Utils (= 2.1.0)
-    - GoogleMaps (= 3.1.0)
+    - GoogleMaps (= 3.2.0)
     - React
   - react-native-image-picker (1.0.2):
     - React
-  - react-native-maps (0.25.0):
+  - react-native-maps (0.26.1):
     - React
   - React-RCTActionSheet (0.60.5):
     - React-Core (= 0.60.5)
@@ -177,15 +112,6 @@ PODS:
     - React-Core (= 0.60.5)
   - RNCAsyncStorage (1.6.1):
     - React
-  - RNFirebase (5.5.6):
-    - Firebase/Core
-    - React
-    - RNFirebase/Crashlytics (= 5.5.6)
-  - RNFirebase/Crashlytics (5.5.6):
-    - Crashlytics
-    - Fabric
-    - Firebase/Core
-    - React
   - RNGestureHandler (1.5.0):
     - React
   - RNReanimated (1.4.0):
@@ -196,12 +122,9 @@ PODS:
 
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
-  - Firebase/Auth (~> 6.3.0)
-  - Firebase/Core (~> 6.3.0)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - Google-Maps-iOS-Utils
-  - GoogleIDFASupport (~> 3.14.0)
   - GoogleMaps
   - React (from `../node_modules/react-native/`)
   - React-Core (from `../node_modules/react-native/React`)
@@ -225,30 +148,16 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
-  - RNFirebase (from `../node_modules/react-native-firebase/ios`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - boost-for-react-native
-    - Crashlytics
-    - Fabric
-    - Firebase
-    - FirebaseAnalytics
-    - FirebaseAuth
-    - FirebaseAuthInterop
-    - FirebaseCore
-    - FirebaseInstanceID
     - Google-Maps-iOS-Utils
-    - GoogleAppMeasurement
-    - GoogleIDFASupport
     - GoogleMaps
-    - GoogleUtilities
-    - GTMSessionFetcher
-    - nanopb
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -301,8 +210,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/WebSocket"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
-  RNFirebase:
-    :path: "../node_modules/react-native-firebase/ios"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -314,24 +221,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  Crashlytics: 2dfd686bcb918dc10ee0e76f7f853fe42c7bd552
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
-  Firebase: 8432d732974498afd5987e9001a05f90f1a3d625
-  FirebaseAnalytics: 470ddab7253b21ad5a40bebd4a9903d7ae19386a
-  FirebaseAuth: 7fa2cc010b93770831a4e7a60651b52c3b8d111a
-  FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
-  FirebaseCore: 68f8a7f50cdae542715d4e86afa37c4067217dcb
-  FirebaseInstanceID: 8b42755db950682e7de0d167bc6fb26a57b244af
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
-  GoogleAppMeasurement: a35a645835bae31b6bdc0576396bc23908f12a22
-  GoogleIDFASupport: aaf8c10bd429abb1c15349d5252244f5eda8ead1
-  GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
-  GoogleUtilities: e7dc37039b19df7fe543479d3e4a02ac8d11bb69
-  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
-  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  GoogleMaps: 5046d7edfe381c1a0b20fdaf293915a375c3122b
   React: 53c53c4d99097af47cf60594b8706b4e3321e722
   React-Core: ba421f6b4f4cbe2fb17c0b6fc675f87622e78a64
   React-cxxreact: 8384287780c4999351ad9b6e7a149d9ed10a2395
@@ -340,9 +234,9 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 90ad2f9db09513fc763bc757fdc3c4ff8bde2a30
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
   react-native-geolocation: a7b94614afbd5fd8350e0233a2025c8228fc8041
-  react-native-google-maps: 88d750ad441b19c24885f20d43a55ecac25939b5
+  react-native-google-maps: 2e2e697dab576abd5809d78cd74e775865b62bf7
   react-native-image-picker: 5c15ac0251475ae0b9f21e17d08d7c28db847abc
-  react-native-maps: 190c02ca533fddac5bb49cf17bdece3644612107
+  react-native-maps: 6e499eee4eabf422ba8b6f94e993cc768bf35153
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
   React-RCTBlob: 5e2b55f76e9a1c7ae52b826923502ddc3238df24
@@ -354,12 +248,11 @@ SPEC CHECKSUMS:
   React-RCTVibration: 2105b2e0e2b66a6408fc69a46c8a7fb5b2fdade0
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   RNCAsyncStorage: 2e2e3feb9bdadc752a026703d8c4065ca912e75a
-  RNFirebase: ac0de8b24c6f91ae9459575491ed6a77327619c6
   RNGestureHandler: a4ddde1ffc6e590c8127b8b7eabfdade45475c74
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
-PODFILE CHECKSUM: ca63c81a0023935dc9edafd3a38e585e0c076095
+PODFILE CHECKSUM: 21b01068d246009fc873434e60598b49f95cadcf
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.8.4
