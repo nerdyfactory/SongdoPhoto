@@ -55,7 +55,9 @@ const MapScreen = (Props: {}) => {
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
+        console.error('ImagePicker Error: ', response.error);
+      } else {
+        console.log(response);
       }
     });
   };
