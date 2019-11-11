@@ -5,7 +5,6 @@ import React, {
   createContext,
   useState,
   useMemo,
-  useEffect,
   useContext,
   ReactNode,
   Dispatch,

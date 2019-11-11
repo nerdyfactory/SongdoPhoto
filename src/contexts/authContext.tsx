@@ -10,7 +10,8 @@ import React, {
   ReactNode,
   Dispatch,
 } from 'react';
-import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
+
+import Firebase, { FirebaseAuthTypes } from '../services/Firebase';
 
 type AuthContextValue = [FirebaseAuthTypes.User, Dispatch<any>];
 
@@ -32,9 +33,11 @@ function AuthProvider({ children }: Props) {
   const [currentUser, setUser] = useState();
 
   useEffect(() => {
-    return auth().onAuthStateChanged((user: FirebaseAuthTypes.User | null) => {
-      setUser(user || {});
-    });
+    return Firebase.auth().onAuthStateChanged(
+      (user: FirebaseAuthTypes.User | null) => {
+        setUser(user || {});
+      },
+    );
   }, []);
 
   const value = useMemo<AuthContextValue>(() => [currentUser, setUser], [
