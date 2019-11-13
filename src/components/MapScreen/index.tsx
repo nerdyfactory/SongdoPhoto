@@ -58,7 +58,7 @@ const MapScreen = (Props: {}) => {
       } else if (response.error) {
         console.error('ImagePicker Error: ', response.error);
       } else {
-        uploadPhoto(response).then(res => {
+        uploadPhoto(response, location).then(res => {
           console.log(res);
         });
       }
