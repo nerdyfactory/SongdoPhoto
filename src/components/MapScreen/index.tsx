@@ -19,6 +19,7 @@ import MapView, {
 import Geolocation from 'react-native-geolocation-service';
 import ImagePicker from 'react-native-image-picker';
 
+import { uploadPhoto } from '../../services/Firebase';
 import ActionButton from '../Shared/ActionButton';
 const AddIcon = require('../../assets/images/add.png');
 const CursorIcon = require('../../assets/images/cursor.png');
@@ -57,7 +58,9 @@ const MapScreen = (Props: {}) => {
       } else if (response.error) {
         console.error('ImagePicker Error: ', response.error);
       } else {
-        console.log(response);
+        uploadPhoto(response).then(res => {
+          console.log(res);
+        });
       }
     });
   };
@@ -120,6 +123,7 @@ const MapScreen = (Props: {}) => {
           rotateEnabled={false}
           showsUserLocation={true}
           onUserLocationChange={onUserLocationChange}
+          showsMyLocationButton={false}
         />
         <AddButton onPress={onPressAdd} />
         <ActionButton
