@@ -1062,6 +1062,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/geodesy@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@types/geodesy/-/geodesy-2.2.0.tgz#a91fdb3ef11f158f1dd33b5142c815b4dbcab67d"
+  integrity sha512-giuxxDLFSGP9YmHZU5VQIBAyBxz3yaSwpH1rudT0orokQTSbWDNe1Y4bqZkRmx5rWnd4/ms3AJ/f3xnZmi4meQ==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
@@ -2618,6 +2623,11 @@ gauge@~2.7.3:
     string-width "^1.0.1"
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
+
+geodesy@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/geodesy/-/geodesy-2.2.0.tgz#279a2d229faf2fe1675c2b8e59fe3434bdd960d0"
+  integrity sha512-pNCjfcmU9Q27SJpSLIN0deidCEhGtQvxA7cH28bJKn2lV1xFA4fxfHeYAmGAXqJBQvPIqZsWWvytkJNkL+k2Ug==
 
 get-caller-file@^1.0.1:
   version "1.0.3"
