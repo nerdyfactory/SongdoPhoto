@@ -3,15 +3,14 @@
  */
 
 import firebase from '@react-native-firebase/app';
-import firestore, {
-  FirebaseFirestoreTypes,
-} from '@react-native-firebase/firestore';
-import storage from '@react-native-firebase/storage';
+import firestore from '@react-native-firebase/firestore';
+import storage, { FirebaseStorageTypes } from '@react-native-firebase/storage';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import { Platform } from 'react-native';
 import RNFetchBlob from 'rn-fetch-blob';
+import GeolocationService from './Geolocation';
 
-const Firebase = {
+const FirebaseService = {
   firebase,
   firestore,
   storage,
@@ -40,19 +39,18 @@ const uploadPhoto = (
 };
 
 const savePhotoInfo = (
-  task: FirebaseFirestoreTypes.Task,
+  task: FirebaseStorageTypes.TaskSnapshot,
   location: Location,
 ) => {
   const { currentUser } = auth();
   const { metadata } = task;
   const photosRef = firestore().collection('photos');
+  const { latitude, longitude } = location;
   return photosRef.add({
     uid: currentUser ? currentUser.uid : null,
     metadata,
-    location: new firebase.firestore.GeoPoint(
-      location.latitude,
-      location.longitude,
-    ),
+    location: new firestore.GeoPoint(latitude, longitude),
+    utm: GeolocationService.toUtm(latitude, longitude),
   });
 };
 
@@ -65,4 +63,4 @@ const getPathForFirebaseStorage = async (uri: string): Promise<string> => {
 
 export { FirebaseAuthTypes, uploadPhoto };
 
-export default Firebase;
+export default FirebaseService;
