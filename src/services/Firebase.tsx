@@ -22,6 +22,10 @@ interface Location {
   longitude: number;
 }
 
+export interface DocData {
+  [key: string]: any;
+}
+
 const uploadPhoto = (
   { uri, fileName }: { uri: string; fileName?: string },
   location: Location,
@@ -54,6 +58,23 @@ const savePhotoInfo = (
   });
 };
 
+const getPhotos = (start: Location, end: Location): Promise<DocData[]> => {
+  const startPoint = new firestore.GeoPoint(start.latitude, start.longitude);
+  const endPoint = new firestore.GeoPoint(end.latitude, end.longitude);
+  return firestore()
+    .collection('photos')
+    .where('location', '>=', startPoint)
+    .where('location', '<=', endPoint)
+    .get()
+    .then(snapshots => {
+      const ret: DocData[] = [];
+      snapshots.forEach(doc => ret.push({ ...doc.data(), id: doc.id } || {}));
+      return ret.filter(
+        r => r.location && r.location.latitude && r.location.longitude,
+      );
+    });
+};
+
 const getPathForFirebaseStorage = async (uri: string): Promise<string> => {
   if (Platform.OS === 'ios') {
     return Promise.resolve(uri);
@@ -61,6 +82,6 @@ const getPathForFirebaseStorage = async (uri: string): Promise<string> => {
   return RNFetchBlob.fs.stat(uri).then(stat => stat.path);
 };
 
-export { FirebaseAuthTypes, uploadPhoto };
+export { FirebaseAuthTypes, uploadPhoto, getPhotos };
 
 export default FirebaseService;

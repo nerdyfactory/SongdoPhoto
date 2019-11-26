@@ -19,7 +19,8 @@ import MapView, {
 import Geolocation from 'react-native-geolocation-service';
 import ImagePicker from 'react-native-image-picker';
 
-import { uploadPhoto } from '../../services/Firebase';
+import { uploadPhoto, getPhotos } from '../../services/Firebase';
+
 import ActionButton from '../Shared/ActionButton';
 const AddIcon = require('../../assets/images/add.png');
 const CursorIcon = require('../../assets/images/cursor.png');
@@ -40,6 +41,8 @@ const MapScreen = (Props: {}) => {
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
+
+  const [photos, setPhotos] = useState(Array());
 
   const onPressAdd = () => {
     const options = {
@@ -70,6 +73,18 @@ const MapScreen = (Props: {}) => {
       ...location,
       ...coords,
     });
+    const { longitude, latitude, longitudeDelta, latitudeDelta } = coords;
+    const lngDelta = longitudeDelta / 2;
+    const latDelta = latitudeDelta / 2;
+    const start = {
+      longitude: longitude - lngDelta,
+      latitude: latitude - latDelta,
+    };
+    const end = {
+      longitude: longitude + lngDelta,
+      latitude: latitude + latDelta,
+    };
+    getPhotos(start, end).then(docs => setPhotos(docs));
   };
 
   const onUserLocationChange = ({ nativeEvent }: EventUserLocation) => {
@@ -95,11 +110,11 @@ const MapScreen = (Props: {}) => {
     onRefresh = true;
     Geolocation.getCurrentPosition(
       ({ coords }) => {
-        const { longitude, latitude } = coords;
+        console.log(coords);
         setLocation({
           ...location,
-          longitude,
-          latitude,
+          longitude: coords.longitude,
+          latitude: coords.latitude,
         });
         onRefresh = false;
       },
@@ -111,7 +126,6 @@ const MapScreen = (Props: {}) => {
       { enableHighAccuracy: true, timeout: 1500, maximumAge: 1000 },
     );
   };
-
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.mapContainer}>
@@ -123,8 +137,17 @@ const MapScreen = (Props: {}) => {
           rotateEnabled={false}
           showsUserLocation={true}
           onUserLocationChange={onUserLocationChange}
-          showsMyLocationButton={false}
-        />
+          showsMyLocationButton={false}>
+          {photos.map(p => (
+            <Marker
+              key={p.id}
+              coordinate={{
+                longitude: p.location.longitude,
+                latitude: p.location.latitude,
+              }}
+            />
+          ))}
+        </MapView>
         <AddButton onPress={onPressAdd} />
         <ActionButton
           containerStyle={styles.myLocation}
