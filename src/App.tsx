@@ -9,18 +9,18 @@ import ToastMessage from './components/Shared/ToastMessage';
 import { AuthProvider } from './contexts/AuthContext';
 import { MessageProvider } from './contexts/MessageContext';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <MessageProvider>
-        <AuthProvider>
-          <Navigator />
-        </AuthProvider>
-        <ToastMessage />
-      </MessageProvider>
-    </View>
-  );
-}
+const App = () => (
+  <View style={styles.container}>
+    <MessageProvider>
+      <AuthProvider>
+        <Navigator />
+      </AuthProvider>
+      <ToastMessage />
+    </MessageProvider>
+  </View>
+);
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {

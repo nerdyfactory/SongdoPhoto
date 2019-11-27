@@ -4,13 +4,13 @@
 
 import React, { useState } from 'react';
 import { StyleSheet, View, SafeAreaView, Text, TextInput } from 'react-native';
-import firebase from 'react-native-firebase';
 import {
   NavigationParams,
   NavigationScreenProp,
   NavigationState,
 } from 'react-navigation';
 
+import Firebase from '../../services/Firebase';
 import { Spacer, BasicButton } from '../Shared';
 import { Styles, Colors } from '../../theme';
 import { useMessage } from '../../contexts/MessageContext';
@@ -22,10 +22,9 @@ export interface Props {
 export default function SignUpScreen({ navigation }: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [message, setMessage] = useMessage();
+  const [, setMessage] = useMessage();
   const onSubmit = () => {
-    return firebase
-      .auth()
+    return Firebase.auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         setMessage({
@@ -34,7 +33,7 @@ export default function SignUpScreen({ navigation }: Props) {
         navigation.navigate('App');
       })
       .catch(e => {
-        console.log(e);
+        console.error(e);
         setMessage({
           messageType: 'error',
           messageText: e.message,

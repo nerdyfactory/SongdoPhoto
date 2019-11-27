@@ -19,6 +19,8 @@ import MapView, {
 import Geolocation from 'react-native-geolocation-service';
 import ImagePicker from 'react-native-image-picker';
 
+import { uploadPhoto, getPhotos } from '../../services/Firebase';
+
 import ActionButton from '../Shared/ActionButton';
 const AddIcon = require('../../assets/images/add.png');
 const CursorIcon = require('../../assets/images/cursor.png');
@@ -31,6 +33,8 @@ interface State {
   longitudeDelta: number;
 }
 
+let eventCounter = 0;
+
 const MapScreen = (Props: {}) => {
   const [location, setLocation] = useState({
     updated: false,
@@ -39,6 +43,8 @@ const MapScreen = (Props: {}) => {
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
+
+  const [photos, setPhotos] = useState(Array());
 
   const onPressAdd = () => {
     const options = {
@@ -55,7 +61,11 @@ const MapScreen = (Props: {}) => {
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
+        console.error('ImagePicker Error: ', response.error);
+      } else {
+        uploadPhoto(response, location).then(res => {
+          console.log(res);
+        });
       }
     });
   };
@@ -64,6 +74,25 @@ const MapScreen = (Props: {}) => {
     setLocation({
       ...location,
       ...coords,
+    });
+    eventCounter += 1;
+    const { longitude, latitude, longitudeDelta, latitudeDelta } = coords;
+    const lngDelta = longitudeDelta / 2;
+    const latDelta = latitudeDelta / 2;
+    const start = {
+      longitude: longitude - lngDelta,
+      latitude: latitude - latDelta,
+    };
+    const end = {
+      longitude: longitude + lngDelta,
+      latitude: latitude + latDelta,
+    };
+    getPhotos(start, end).then(docs => {
+      eventCounter -= 1;
+      if (eventCounter === 0) {
+        // update view if there is no pending query
+        setPhotos(docs);
+      }
     });
   };
 
@@ -90,11 +119,11 @@ const MapScreen = (Props: {}) => {
     onRefresh = true;
     Geolocation.getCurrentPosition(
       ({ coords }) => {
-        const { longitude, latitude } = coords;
+        console.log(coords);
         setLocation({
           ...location,
-          longitude,
-          latitude,
+          longitude: coords.longitude,
+          latitude: coords.latitude,
         });
         onRefresh = false;
       },
@@ -106,7 +135,6 @@ const MapScreen = (Props: {}) => {
       { enableHighAccuracy: true, timeout: 1500, maximumAge: 1000 },
     );
   };
-
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.mapContainer}>
@@ -118,7 +146,22 @@ const MapScreen = (Props: {}) => {
           rotateEnabled={false}
           showsUserLocation={true}
           onUserLocationChange={onUserLocationChange}
-        />
+          showsMyLocationButton={false}>
+          {photos.map(p => (
+            <Marker
+              key={p.id}
+              coordinate={{
+                longitude: p.location.longitude,
+                latitude: p.location.latitude,
+              }}>
+              <Image
+                key={p.metadata.fullpath}
+                source={{ uri: p.imageUrl }}
+                style={styles.photo}
+              />
+            </Marker>
+          ))}
+        </MapView>
         <AddButton onPress={onPressAdd} />
         <ActionButton
           containerStyle={styles.myLocation}
@@ -198,6 +241,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   addIcon: {
+    width: 60,
+    height: 60,
+  },
+  photo: {
     width: 60,
     height: 60,
   },

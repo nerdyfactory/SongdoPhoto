@@ -9,9 +9,14 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
+    "@react-native-firebase/app": "^6.0.3",
+    "@react-native-firebase/auth": "^6.0.3",
+    "@react-native-firebase/firestore": "^6.0.3",
+    "@react-native-firebase/storage": "^6.0.3",
+    "@types/geodesy": "^2.2.0",
+    "geodesy": "^2.2.0",
     "react": "16.8.6",
     "react-native": "0.60.5",
-    "react-native-firebase": "~5.5.6",
     "react-native-geolocation-service": "^3.1.0",
     "react-native-gesture-handler": "^1.5.0",
     "react-native-image-picker": "^1.0.2",
@@ -19,7 +24,8 @@
     "react-native-reanimated": "^1.4.0",
     "react-native-screens": "^1.0.0-alpha.23",
     "react-navigation": "^4.0.10",
-    "react-navigation-stack": "^1.10.3"
+    "react-navigation-stack": "^1.10.3",
+    "rn-fetch-blob": "^0.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
