@@ -29,7 +29,7 @@ interface Props {
   children: ReactNode;
 }
 
-function AuthProvider({ children }: Props) {
+const AuthProvider = ({ children }: Props): ReactNode => {
   const [currentUser, setUser] = useState();
 
   useEffect(() => {
@@ -45,6 +45,6 @@ function AuthProvider({ children }: Props) {
   ]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
+};
 
 export { AuthProvider, useAuth };

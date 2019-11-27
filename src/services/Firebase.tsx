@@ -3,7 +3,9 @@
  */
 
 import firebase from '@react-native-firebase/app';
-import firestore from '@react-native-firebase/firestore';
+import firestore, {
+  FirebaseFirestoreTypes,
+} from '@react-native-firebase/firestore';
 import storage, { FirebaseStorageTypes } from '@react-native-firebase/storage';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import { Platform } from 'react-native';
@@ -22,8 +24,13 @@ interface Location {
   longitude: number;
 }
 
-export interface DocData {
-  [key: string]: any;
+export interface PhotoData {
+  uid: string | null;
+  metadata: FirebaseStorageTypes.FullMetadata;
+  location: FirebaseFirestoreTypes.GeoPoint;
+  utm: string;
+  id: string;
+  imageUrl?: string;
 }
 
 const uploadPhoto = (
@@ -58,7 +65,7 @@ const savePhotoInfo = (
   });
 };
 
-const getPhotos = (start: Location, end: Location): Promise<DocData[]> => {
+const getPhotos = (start: Location, end: Location): Promise<PhotoData[]> => {
   const startPoint = new firestore.GeoPoint(start.latitude, start.longitude);
   const endPoint = new firestore.GeoPoint(end.latitude, end.longitude);
   return firestore()
@@ -67,13 +74,32 @@ const getPhotos = (start: Location, end: Location): Promise<DocData[]> => {
     .where('location', '<=', endPoint)
     .get()
     .then(snapshots => {
-      const ret: DocData[] = [];
-      snapshots.forEach(doc => ret.push({ ...doc.data(), id: doc.id } || {}));
-      return ret.filter(
-        r => r.location && r.location.latitude && r.location.longitude,
+      const ret: PhotoData[] = [];
+      snapshots.forEach(doc => {
+        const data = doc.data();
+        if (!data) {
+          return;
+        }
+        const { uid, metadata, location, utm } = data;
+        ret.push({ uid, metadata, location, utm, id: doc.id });
+      });
+      return Promise.all(
+        ret.map(photoData =>
+          storageUrl(photoData.metadata).then(imageUrl => ({
+            ...photoData,
+            imageUrl,
+          })),
+        ),
       );
     });
 };
+
+const storageUrl = (
+  metadata: FirebaseStorageTypes.FullMetadata,
+): Promise<string> =>
+  storage()
+    .ref(metadata.fullPath)
+    .getDownloadURL();
 
 const getPathForFirebaseStorage = async (uri: string): Promise<string> => {
   if (Platform.OS === 'ios') {

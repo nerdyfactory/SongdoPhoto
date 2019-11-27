@@ -33,6 +33,8 @@ interface State {
   longitudeDelta: number;
 }
 
+let eventCounter = 0;
+
 const MapScreen = (Props: {}) => {
   const [location, setLocation] = useState({
     updated: false,
@@ -73,6 +75,7 @@ const MapScreen = (Props: {}) => {
       ...location,
       ...coords,
     });
+    eventCounter += 1;
     const { longitude, latitude, longitudeDelta, latitudeDelta } = coords;
     const lngDelta = longitudeDelta / 2;
     const latDelta = latitudeDelta / 2;
@@ -84,7 +87,13 @@ const MapScreen = (Props: {}) => {
       longitude: longitude + lngDelta,
       latitude: latitude + latDelta,
     };
-    getPhotos(start, end).then(docs => setPhotos(docs));
+    getPhotos(start, end).then(docs => {
+      eventCounter -= 1;
+      if (eventCounter === 0) {
+        // update view if there is no pending query
+        setPhotos(docs);
+      }
+    });
   };
 
   const onUserLocationChange = ({ nativeEvent }: EventUserLocation) => {
@@ -144,8 +153,13 @@ const MapScreen = (Props: {}) => {
               coordinate={{
                 longitude: p.location.longitude,
                 latitude: p.location.latitude,
-              }}
-            />
+              }}>
+              <Image
+                key={p.metadata.fullpath}
+                source={{ uri: p.imageUrl }}
+                style={styles.photo}
+              />
+            </Marker>
           ))}
         </MapView>
         <AddButton onPress={onPressAdd} />
@@ -227,6 +241,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   addIcon: {
+    width: 60,
+    height: 60,
+  },
+  photo: {
     width: 60,
     height: 60,
   },
