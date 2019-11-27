@@ -29,7 +29,7 @@ interface Props {
   children: ReactNode;
 }
 
-const AuthProvider = ({ children }: Props): ReactNode => {
+const AuthProvider = ({ children }: Props) => {
   const [currentUser, setUser] = useState();
 
   useEffect(() => {

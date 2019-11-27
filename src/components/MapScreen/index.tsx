@@ -19,23 +19,17 @@ import MapView, {
 import Geolocation from 'react-native-geolocation-service';
 import ImagePicker from 'react-native-image-picker';
 
-import { uploadPhoto, getPhotos } from '../../services/Firebase';
+import { uploadPhoto, getPhotos, PhotoData } from '../../services/Firebase';
+import { PropsWithNavigation } from '../../Navigator';
 
 import ActionButton from '../Shared/ActionButton';
 const AddIcon = require('../../assets/images/add.png');
 const CursorIcon = require('../../assets/images/cursor.png');
 const LocationUpdateIcon = require('../../assets/images/location-update.png');
 
-interface State {
-  latitude: number;
-  longitude: number;
-  latitudeDelta: number;
-  longitudeDelta: number;
-}
-
 let eventCounter = 0;
 
-const MapScreen = (Props: {}) => {
+const MapScreen = ({ navigation }: PropsWithNavigation) => {
   const [location, setLocation] = useState({
     updated: false,
     latitude: 37.5610336,
@@ -135,6 +129,10 @@ const MapScreen = (Props: {}) => {
       { enableHighAccuracy: true, timeout: 1500, maximumAge: 1000 },
     );
   };
+
+  const onPressPhoto = (photoData: PhotoData) => () =>
+    navigation.navigate('Photo', { photoData });
+
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.mapContainer}>
@@ -153,7 +151,8 @@ const MapScreen = (Props: {}) => {
               coordinate={{
                 longitude: p.location.longitude,
                 latitude: p.location.latitude,
-              }}>
+              }}
+              onPress={onPressPhoto(p)}>
               <Image
                 key={p.metadata.fullpath}
                 source={{ uri: p.imageUrl }}
@@ -176,6 +175,7 @@ const MapScreen = (Props: {}) => {
 
 MapScreen.navigationOptions = {
   title: 'map',
+  header: null,
 };
 
 const AddButton = ({ onPress }: { onPress: () => void }) => (

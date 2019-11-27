@@ -2,21 +2,27 @@
  * @format
  */
 
-import { createSwitchNavigator, createAppContainer } from 'react-navigation';
+import {
+  createSwitchNavigator,
+  createAppContainer,
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState,
+} from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import MapScreen from './components/MapScreen';
+import PhotoScreen from './components/PhotoScreen';
 import SignInScreen from './components/SignInScreen';
 import SignUpScreen from './components/SignUpScreen';
 import ForgotPasswordScreen from './components/ForgotPasswordScreen';
 import AuthLoadingScreen from './components/AuthLoadingScreen';
 
 const AppStack = createStackNavigator(
-  { Map: MapScreen },
+  { Map: MapScreen, Photo: PhotoScreen },
   {
-    defaultNavigationOptions: {
-      header: null,
-    },
+    headerMode: 'float',
+    headerTransitionPreset: 'fade-in-place',
   },
 );
 const AuthStack = createStackNavigator({
@@ -37,5 +43,9 @@ const Navigator = createAppContainer(
     },
   ),
 );
+
+export interface PropsWithNavigation {
+  navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+}
 
 export default Navigator;
